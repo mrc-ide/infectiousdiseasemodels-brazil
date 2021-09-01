@@ -1,29 +1,35 @@
-deriv(W) <- ((deltaH0 + deltaHinfinity * CHi * mbeta * L) / (1 + CHi * mbeta * L)) * mbeta * L - (rhoW * W) 
+deriv(W) <- ((deltaH0 + deltaHinfinity * cHinfinity * mbeta * L) / (1 + cHinfinity * mbeta * L)) * mbeta * L - (rhoW * W) 
+
 deriv(L) <- beta * theta0 - (rhoL * L)
 
-theta0 <- (deltaV0 / c) * ( 1 - (1 + W/(2*kv))^(-kv) + (1 + W * (2 - exp(-c * aV * zi)) / (2 * kv) )^(-kv) - (1 + W * (1 - exp(- c * aV * zi)) / (2*kv) ) ^(-kv) )
+theta0 <- (deltaV0 / c) * ( 1 - (1 + W/(2*k))^(-k) + (1 + (W * (2 - exp(-c * aV * zi))) / (2*k) )^(-k) - (1 + (W * (1 - exp(- c * aV * zi))) / (2*k)) ^(-k) )
+
 zi <- epsilon / rhoM
 rhoW <- sigmaW + muH
+rhoM <- sigmaM + muH
+rhoL <- sigmaL + muV + aH
+beta <- h / g
 
 initial(W) <- 10
 initial(L) <- 0
 
-deltaHinfinity <- 0.00299
-CHi <- 0.00586
+deltaHinfinity <- 0.0032
+cHinfinity <- 0.0137
 deltaH0 <- aH*sH
 aH <- 0.8
-sH <- 0.089
+sH <- 0.2
 muH <- 0.02
 sigmaW <- 0.1
-deltaV0 <- 0.0166
-CV0 <- 0.0205
-alphaV0 <- 0.5968
-beta <- 31.3
-aV <- 0.448
-c <- 0.026
+sigmaM <- 0.8
 epsilon <- 0.667
-rhoM <- 0.82
-rhoL <- 161.2
 
-kv <- user(0.25)
-mbeta <- 174750
+deltaV0 <- 0.043
+c <- 0.026
+g <- 0.0096
+aV <- 0.4481
+
+h <- user(0.3)
+sigmaL <- user(104)
+muV <- user (52)
+k <- user(0.5)
+mbeta <- user (15000)
