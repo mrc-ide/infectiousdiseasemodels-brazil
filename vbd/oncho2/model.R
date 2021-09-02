@@ -7,7 +7,7 @@ theta0 <- (deltaV0 / c) * ( 1 - (1 + W/(2*k))^(-k) + (1 + (W * (2 - exp(-c * aV 
 zi <- epsilon / rhoM
 rhoW <- sigmaW + muH
 rhoM <- sigmaM + muH
-rhoL <- sigmaL + muV + aH
+rhoL <- sigmaL + muV + aH/g
 beta <- h / g
 
 initial(W) <- 10
@@ -25,11 +25,11 @@ epsilon <- 0.667
 
 deltaV0 <- 0.043
 c <- 0.026
-g <- 0.0096
+g < - 0.0096
 aV <- 0.4481
 
-h <- user(0.3)
-sigmaL <- user(104)
-muV <- user (52)
+h <- user (0.3)
+sigmaL <- user(52)
+muV <- user (26)
 k <- user(0.5)
 mbeta <- user (15000)
