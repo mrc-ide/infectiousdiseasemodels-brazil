@@ -1,21 +1,21 @@
 ##Differential equations
 
-deriv(X) <- B-beta*X*Y/N-mu*X
-deriv(Y) <- beta*X*Y/N-mu*Y-nu*Y
+deriv(S) <- B-beta*S*I/N-mu*S
+deriv(I) <- beta*S*I/N-mu*I-nu*I
 
 ##Initial conditions
 
-initial(X) <- 995
-initial(Y) <- 5
+initial(S) <- 995
+initial(I) <- 5
 
 ##Other equations
 
-N <- X+Y
+N <- S+I
 
 beta <- kappa*c
 
 B <- alpha*N 	#entry rate, exponentially growing population
-#B <- mu*N+nu*Y	#entry rate, constant population size - useful for model checking
+#B <- mu*N+nu*I	#entry rate, constant population size - useful for model checking
 
 R0 <- beta/(mu+nu)
 
@@ -30,7 +30,7 @@ alpha <-user(0.0374)    #birth rate scaled to per person
 
 ##Additional output
 
-output(prevalence) <- Y/N
+output(prevalence) <- I/N
 output(Preveq) <- 1-1/R0 #prevalence at equilibrium
 output(R0_out) <-beta/(mu+nu)
-output(incidence) <- (beta*X*Y/N)/X
+output(incidence) <- (beta*S*I/N)/S
