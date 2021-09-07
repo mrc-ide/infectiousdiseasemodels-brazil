@@ -2,7 +2,7 @@ deriv(W) <- ((deltaH0 + deltaHinfinity * cHinfinity * mbeta * L) / (1 + cHinfini
 
 deriv(L) <- beta * theta0 - (rhoL * L)
 
-theta0 <- (deltaV0 / c) * ( 1 - (1 + W/(2*k))^(-k) + (1 + (W * (2 - exp(-c * aV * zi))) / (2*k) )^(-k) - (1 + (W * (1 - exp(- c * aV * zi))) / (2*k)) ^(-k) )
+theta0 <- (deltaV0 / c) * ( 1 - (1 + W/(2*kv))^(-kv) + (1 + (W * (2 - exp(-c * aV * zi))) / (2*kv) )^(-kv) - (1 + (W * (1 - exp(- c * aV * zi))) / (2*kv)) ^(-kv) )
 
 zi <- epsilon / rhoM
 rhoW <- sigmaW + muH
@@ -25,11 +25,11 @@ epsilon <- 0.667
 
 deltaV0 <- 0.043
 c <- 0.026
-g < - 0.0096
+g <- 0.0096
 aV <- 0.4481
 
 h <- user (0.3)
 sigmaL <- user(52)
 muV <- user (26)
-k <- user(0.5)
+kv <- user(0.5)
 mbeta <- user (15000)
