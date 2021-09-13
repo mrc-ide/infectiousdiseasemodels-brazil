@@ -29,7 +29,11 @@ g <- 0.0096
 aV <- 0.4481
 
 h <- user (0.3)
-sigmaL <- user(52)
-muV <- user (26)
+sigmaL <- user(104)
+muV <- user (52)
 kv <- user(0.5)
 mbeta <- user (15000)
+
+ATP <- mbeta * L
+output(ATP) <- ATP
+
