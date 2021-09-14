@@ -53,10 +53,10 @@ output(prevalence_f) <- I_f/N_f
 output(prevalence_m) <- I_m/N_m
 output(prevalence_tot) <- (I_f+I_m)/N_tot
 output(incidence_f) <- beta_mtof*S_f*I_m/N_m
-output(incidence_m) <- beta_ftom*S_f*I_f/N_f
-output(incidence_tot) <- (beta_mtof*S_f*I_m/N_m)+(beta_ftom*S_f*I_f/N_f)
+output(incidence_m) <- beta_ftom*S_m*I_f/N_f
+output(incidence_tot) <- (beta_mtof*S_f*I_m/N_m)+(beta_ftom*S_m*I_f/N_f)
 output(incidence_rate_f) <- (beta_mtof*S_f*I_m/N_m)/(S_f+P_f)
 output(incidence_rate_m) <- (beta_ftom*S_m*I_f/N_f)/(S_m+P_m)
-output(incidence_rate_tot) <- ((beta_mtof*S_f*I_m/N_m)+(beta_ftom*S_f*I_f/N_f))/(S_f+P_f+S_m+P_m)
+output(incidence_rate_tot) <- ((beta_mtof*S_f*I_m/N_m)+(beta_ftom*S_m*I_f/N_f))/(S_f+P_f+S_m+P_m)
 output(partnerships_f) <- c_f*(S_f+I_f)
 output(partnerships_m) <- c_m*(S_m+I_m)

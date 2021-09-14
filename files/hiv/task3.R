@@ -1,7 +1,7 @@
 ##Differential equations
 
-deriv(S) <- B-beta*S*I/N-mu*S
-deriv(I) <- beta*S*I/N-mu*I-nu*I
+deriv(S) <- B -beta*S*I/N - mu*S
+deriv(I) <- beta*S*I/N -mu*I -nu*I
 
 ##Initial conditions
 
@@ -31,6 +31,7 @@ alpha <-user(0.0374)    #birth rate scaled to per person
 ##Additional output
 
 output(prevalence) <- I/N
-output(Preveq) <- 1-1/R0 #prevalence at equilibrium
-output(R0_out) <-beta/(mu+nu)
-output(incidence) <- (beta*S*I/N)/S
+output(Preveq) <- 1 - 1/R0 #prevalence at equilibrium
+output(R0_out) <- beta/(mu+nu)
+output(inci) <- (beta*S*I/N)/N
+
