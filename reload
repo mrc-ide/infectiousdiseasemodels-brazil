@@ -67,7 +67,7 @@ prepare <- function(root, file) {
 
 
 staff_pages <- function(root) {
-  files <- c("week1.html", "week2.html")
+  files <- c("week1.html")
   message("Writing staff pages")
   for (f in files) {
     txt <- readLines(file.path(root, f))
